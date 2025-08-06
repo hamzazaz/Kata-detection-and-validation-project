@@ -1,4 +1,57 @@
-# Kata Detection System
+## Repository Structure
+
+The repository is organized into two main sections: documentation and the core system logic.
+
+---
+
+### Markdown Files — Documentation
+
+These files provide guidance, usage instructions, and technical explanations for users and developers.
+
+- **`README.md`**  
+  The main entry point for understanding the project. It explains the purpose, structure, setup steps, and how to use the system. You're reading it now.
+
+- **`DetectionCodeGuideline.md`**  
+  In-depth technical documentation of the detection code. Covers each component, the matching logic, configurable parameters, and the internal pipeline. Essential for contributors and developers.
+
+- **`Downloads.md`** *(to be added)*  
+  Will provide external download links and setup instructions for assets such as sample videos, MediaPipe models, and pose datasets to ensure smooth installation and testing.
+
+---
+
+### `KataDetectionSystem/` — Core System Logic
+
+This folder contains the essential code and assets used to detect and validate kata performance using pose estimation.
+
+- **`KataDetector.ipynb`**  
+  The main notebook running the full detection pipeline. Loads a video, applies MediaPipe pose detection, compares poses with reference data, and outputs a frame-by-frame evaluation. Produces an annotated video and CSV report.
+
+- **`LandmarkVisualizer.ipynb`**  
+  A utility notebook to visualize MediaPipe pose landmarks frame-by-frame. Useful for debugging pose detection accuracy and visual inconsistencies.
+
+- **`PoseExtractor.ipynb`**  
+  Allows you to extract and save pose landmarks from an expert kata performance into a structured `.json` file for use as reference ground truth.
+
+- **`ScreenshotTaker.ipynb`**  
+  A tool to take screenshots from specific frames or timestamps in a kata video. Useful for documentation or manual comparison.
+
+- **`heian_shodan_reference.json`**  
+  Structured reference file containing normalized landmark data for all 18 steps of the Heian Shodan kata. Used as the ground truth for comparison and validation.
+
+- **`match_stats_simple.csv`**  
+  Generated after running the detection pipeline. Contains per-step similarity scores, match/miss results, and pose timing breakdown.
+
+- **`output_detected_simple.mp4`**  
+  The output video from the detection pipeline. Annotated with pose landmarks, step names, and feedback indicating whether each step was matched correctly.
+
+- **`vid.mp4`**  
+  Sample input video of a kata performance. Can be replaced with a personal performance video for analysis.
+
+- **`im2/`**  
+  Auxiliary folder containing reference images or frame captures used during debugging, visualization, or demonstration.
+
+
+# Kata Detection System-walkthrough
 
 This kata project is composed of **four interdependent components** working together to enable automated analysis and evaluation of karate kata performance using computer vision and pose detection.
 
