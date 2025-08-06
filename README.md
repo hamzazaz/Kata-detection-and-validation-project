@@ -12,10 +12,10 @@ These files provide guidance, usage instructions, and technical explanations for
   The main entry point for understanding the project. It explains the purpose, structure, setup steps, and how to use the system. You're reading it now.
 
 - **`DetectionCodeGuideline.md`**  
-  In-depth technical documentation of the detection code. Covers each component, the matching logic, configurable parameters, and the internal pipeline. Essential for contributors and developers.
+  In-depth technical documentation of the detection code. Covers each component, the matching logic, configurable parameters, and the internal pipeline. Essential to get the know how on using the system and improving it.
 
-- **`Downloads.md`** *(to be added)*  
-  Will provide external download links and setup instructions for assets such as sample videos, MediaPipe models, and pose datasets to ensure smooth installation and testing.
+- **`Downloads.md`**   
+  Packages required to run the system.
 
 ---
 
@@ -24,7 +24,7 @@ These files provide guidance, usage instructions, and technical explanations for
 This folder contains the essential code and assets used to detect and validate kata performance using pose estimation.
 
 - **`KataDetector.ipynb`**  
-  The main notebook running the full detection pipeline. Loads a video, applies MediaPipe pose detection, compares poses with reference data, and outputs a frame-by-frame evaluation. Produces an annotated video and CSV report.
+  The main notebook running the full detection pipeline. Loads an input video, applies MediaPipe pose detection, compares poses with reference data, and outputs a frame-by-frame evaluation. Produces an annotated video and CSV report.
 
 - **`LandmarkVisualizer.ipynb`**  
   A utility notebook to visualize MediaPipe pose landmarks frame-by-frame. Useful for debugging pose detection accuracy and visual inconsistencies.
@@ -33,10 +33,10 @@ This folder contains the essential code and assets used to detect and validate k
   Allows you to extract and save pose landmarks from an expert kata performance into a structured `.json` file for use as reference ground truth.
 
 - **`ScreenshotTaker.ipynb`**  
-  A tool to take screenshots from specific frames or timestamps in a kata video. Useful for documentation or manual comparison.
+  A tool to take screenshots from specific frames or timestamps in a kata video. Useful for when preparing screenshots for the extractor .
 
 - **`heian_shodan_reference.json`**  
-  Structured reference file containing normalized landmark data for all 18 steps of the Heian Shodan kata. Used as the ground truth for comparison and validation.
+  Structured reference file containing normalized landmark data for all 18 steps of the Heian Shodan kata. Used as the ground truth for comparison and validation, produced by the extractor.
 
 - **`match_stats_simple.csv`**  
   Generated after running the detection pipeline. Contains per-step similarity scores, match/miss results, and pose timing breakdown.
@@ -45,10 +45,10 @@ This folder contains the essential code and assets used to detect and validate k
   The output video from the detection pipeline. Annotated with pose landmarks, step names, and feedback indicating whether each step was matched correctly.
 
 - **`vid.mp4`**  
-  Sample input video of a kata performance. Can be replaced with a personal performance video for analysis.
+  Sample input video of a kata performance. Can be replaced with a personal performance video for analysis(but in this case used both as refrence and input video).
 
 - **`im2/`**  
-  Auxiliary folder containing reference images or frame captures used during debugging, visualization, or demonstration.
+  Folder contained the screenshots used for the extractor in this test gotton automatically from the screenshot taker.
 
 
 # Kata Detection System-walkthrough
