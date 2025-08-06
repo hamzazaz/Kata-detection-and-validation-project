@@ -167,4 +167,30 @@ It is highly suitable for:
 - Motion analysis research and applications
 
 ---
+## Important Highlights
+
+1. **Reference-Based Testing**  
+   The detector has been tested primarily on the original reference video. It still needs to be validated on additional videos with different lighting, performers, and angles.
+
+2. **Pose Visibility Affects Similarity Scores**  
+   Certain steps, such as **Step 11** and **Step 13**, may yield lower similarity scores. This is likely due to **limbs being partially or completely out of the camera view**, which negatively impacts landmark detection accuracy.
+
+3. **Input Video Requirements**  
+   For the detection to function reliably, the input video **must have the same dimensions and orientation** as the reference video used for pose extraction. Any mismatch in resolution or rotation can significantly degrade accuracy.
+
+4. **Generalizability to Other Katas**  
+   This pipeline is designed to be adaptable. It should work for **any kata**, provided that you update the reference step names accordingly and **tune parameters such as timeouts** and similarity thresholds.
+
+5. **Parameter Tuning is Crucial**  
+   Adjusting timeouts and thresholds is essential. Proper tuning ensures that high-quality poses are not accidentally skipped, and false matches are minimized. This is especially important when working with real-world videos where timing may vary.
+
+---
+
+## Next Steps
+
+- **Improve Dimension and Rotation Invariance**  
+  Currently, any input video with dimensions or rotation differing from the reference video causes a **significant drop in detection accuracy**. Future improvements should focus on making the system **robust to resolution and orientation changes**.
+
+- **Expand to Multiple Katas**  
+  Apply the system to detect and analyze **other kata sequences**, creating a diverse and reusable **kata reference library**. This will enable broader training and evaluation capabilities across different styles and routines.
 
