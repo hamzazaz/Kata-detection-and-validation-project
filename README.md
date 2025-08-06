@@ -1,1 +1,1 @@
-# Kata-detection-and-validation-project
+# karate Kata-detection-and-validation-project
