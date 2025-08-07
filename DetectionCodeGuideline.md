@@ -14,10 +14,7 @@ This system performs real-time kata pose detection using MediaPipe and OpenCV, c
 * **Annotated video:** `output_detected_simple.mp4`
 * **Results CSV:** `match_stats_simple.csv`
 
-### Basic Usage
-```bash
-python kata_detection.py
-```
+
 
 ## Configuration Parameters
 
